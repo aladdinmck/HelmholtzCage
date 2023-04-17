@@ -39,17 +39,17 @@ let's see what happens when we uncomment #X.display() and #Y.display() and #Z.di
 
 X = cg.Coil('X-axis', mag.Bx, 30, 1, .5445)
 X.get_current()
-X.display()
+#X.display()
 
 Y = cg.Coil('Y-axis', mag.By, 30, 1, .5445)
 Y.get_current()
-Y.display()
+#Y.display()
 
 Z = cg.Coil('Z-axis', mag.Bz, 30, 1, .5445)
 Z.get_current()
-Z.display()
+#Z.display()
 
-cage = Cage.Cage(X.Iout, Y.Iout, Z.Iout,mag.Bx,mag.By, mag.Bz, 10)
+cage = Cage.Cage(X.Iout, Y.Iout, Z.Iout,mag.Bx,mag.By, mag.Bz, test_length)
 
 print("Calibrate 1")
 cage.calibrate()
