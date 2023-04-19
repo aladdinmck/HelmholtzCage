@@ -17,7 +17,7 @@ class MagneticField:
         self.test_length = test_length
         self.segments = segments
 
-        
+
     def calculate(self):
         "Calculate Magnetic Field Strengths from the Orbital Positions and date"
         value = 0
@@ -31,7 +31,7 @@ class MagneticField:
             Bx = -Btheta *.000000001
             By = Bphi*.000000001
             Bz = -Br*.000000001
-            
+
             self.Bx.append(Bx)
             self.By.append(By)
             self.Bz.append(Bz)
@@ -54,13 +54,10 @@ class MagneticField:
 
     def display(self):
         "Function that will output the magnetic field strengths in Each axis in [T]"
-        print("Magnetic Field Values")
-        print('Bx = ')
-        print(self.Bx)
-        print('By = ')
-        print(self.By)
-        print('Bz = ')
-        print(self.Bz)
+        print("\nTheoretical Magnetic Field Values")
+        print('Bx = ' + str(self.Bx))
+        print('By = ' + str(self.By))
+        print('Bz = ' + str(self.Bz) + '\n')
 
     def plot_fields(self):
         total_time = []
@@ -75,7 +72,7 @@ class MagneticField:
         plt.plot(total_time, self.Bx)
         plt.xlabel("Orbit Propagation (min)")
         plt.ylabel("Magnetic Field Strength (T)")
-        plt.title("Z Magnetic Field")
+        plt.title("X Magnetic Field")
         plt.show()
         plt.close()
         plt.plot(total_time, self.By)
